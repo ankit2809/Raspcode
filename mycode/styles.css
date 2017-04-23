@@ -1,0 +1,11 @@
+#top
+	{
+	background-color : ff0000; 
+	text-align : center;
+	border : top;
+	border-top : thick dotted blue;
+	}
+#bottom
+	{
+	background-color : a0ffab;
+	}
