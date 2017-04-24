@@ -1,0 +1,37 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Exchange rate for EUR - INR </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	  <script>
+      $(document).ready(function()
+        {
+         $("#cur").on('change', function()
+           {
+           var url = "http://api.fixer.io/latest?symbols=" + $("#cur").val();
+           $.getJSON(url, function(data)
+           {
+             for (key in data.rates)
+             { 
+              $("#price").text(data.rates[key]);
+             }
+           });  
+          });
+        });
+    </script>
+  </head>
+	<body>
+		<div align="center">
+			<form>
+				Select currency :  
+        <select id="cur">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="GBP">GBP</option>
+        </select>
+        <br><br>
+        Rates against EUR : <span id="price" style="color:blue">xxxxxx
+			</form>
+		</div>
+	</body>
+</html>
