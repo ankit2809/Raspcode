@@ -1,0 +1,19 @@
+{
+"name":"Veggies",
+"children": [
+ {"name":"cooked",
+  "children": [
+   {"name":"Tomato", "size":10},
+   {"name":"Potato", "size":8},
+   {"name":"Zuccini", "size":4}
+   ]
+ },
+ {
+  "name":"uncooked",
+  "children": [
+   {"name":"Carrot", "size":6},
+   {"name":"Onion", "size":2}
+   ]
+ }
+ ]
+}
