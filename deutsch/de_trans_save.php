@@ -2,13 +2,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
 </html>
 <?php
-  $de_word = $_POST['text_src'];
+  $de_word = trim(preg_replace("/\s+/", ' ', $_POST['text_src']));
   $url = 'http://www.transltr.org/api/translate?text='. '"'. rawurlencode($de_word) .'"' .'&to=en&from=de'; 
           $msg = exec("curl -X GET --header 'Accept: application/json' '". $url ."'"); 
          $data = json_decode($msg, true);   
           $en_text = $data['translationText'];
     // Connecting to database
-    if(isset($de_word))
+    if($de_word!="")
     {
     $connection = new MongoDB\Driver\Manager('mongodb://192.168.0.109:27017');
     //$command = new MongoDB\Driver\Command(['ping' => 1]);
@@ -16,6 +16,13 @@
     $bulk = new MongoDB\Driver\BulkWrite;
     $bulk->insert(['de_wort'=> $de_word,'en_trans'=> $en_text]);
     $connection->executeBulkWrite('local.trans_de_en', $bulk);
+    }
+    else
+    {
+       echo ("<script LANGUAGE='JavaScript' > 
+            window.alert('Please enter the word to translate !')
+            window.location.href='trans_deutsch.html';
+            </script>");
     }
 ?>
 <html>
