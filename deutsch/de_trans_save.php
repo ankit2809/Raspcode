@@ -30,8 +30,8 @@
   <br><br>
   <div id = "left" align="center">
   <form id="backform" action = "trans_deutsch.html" method="POST" >
-  <textarea rows="5" cols="30" name="text_src" wrap = "soft" placeholder='Deutsch Word' readonly style="font-size:20px;padding: 5px;font-family:sans-serif"><?php echo $de_word ?></textarea>    
-  <textarea rows="5" cols="30" name="text_tgt" wrap = "soft" readonly style="background-color: #EFEBEA;font-size:20px;padding: 5px;font-family:sans-serif;border: none;margin-left: 10px"><?php echo $en_text;  ?></textarea> 
+  <textarea rows="5" cols="30" name="text_src" wrap = "soft" placeholder='Deutsch Word' readonly style="font-size:20px;padding: 5px;font-family:sans-serif;resize: none;"><?php echo $de_word ?></textarea>    
+  <textarea rows="5" cols="30" name="text_tgt" wrap = "soft" readonly style="background-color: #EFEBEA;font-size:20px;padding: 5px;font-family:sans-serif;border: none;margin-left: 10px;resize: none;"><?php echo $en_text;  ?></textarea> 
   <br><br><br><br>
   <input type="submit" value="Back" id="back_button" align="center">  
   </form>
