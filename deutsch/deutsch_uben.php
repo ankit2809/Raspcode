@@ -19,6 +19,7 @@
 	<tr>
 	<th>Deutsch</th>
 	<th>English</th>
+	<th>Sentence</th>
 	</tr>
 	<?php 
 	foreach ($cursor as $document) 
@@ -28,6 +29,8 @@
         echo $doc['de_wort']; 
         print "</td><td>";
         echo $doc['en_trans'];
+        print "</td><td>";
+        echo $doc['satze'];
         print "</td> </tr>";
 		} 
 	?>	
